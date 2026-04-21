@@ -80,5 +80,14 @@
   <ItemGroup>
     <None Include="Resources\Map_1.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldWall.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieldWall1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PacMan.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

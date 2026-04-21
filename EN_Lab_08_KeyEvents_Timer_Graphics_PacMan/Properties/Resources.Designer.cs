@@ -61,6 +61,16 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FieldWall {
+            get {
+                object obj = ResourceManager.GetObject("FieldWall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ############################
         ///#..........................#
         ///#.########################.#
@@ -74,6 +84,16 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan.Properties {
         internal static string Map_1 {
             get {
                 return ResourceManager.GetString("Map_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PacMan {
+            get {
+                object obj = ResourceManager.GetObject("PacMan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
