@@ -18,6 +18,8 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan
         private Point pacMan;
         private Keys pacManDirection = Keys.None;
 
+        private int score = 0;
+
         private const int FIELD_SIZE = 50;
         public Form1()
         {
@@ -56,6 +58,7 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan
             if(board[pacMan.Y, pacMan.X] == FieldType.Dot)
             {
                 board[pacMan.Y, pacMan.X] = FieldType.Empty;
+                score++;
             }
             Invalidate();
         }
@@ -102,6 +105,11 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan
                                  pacMan.Y * FIELD_SIZE,
                                  FIELD_SIZE,
                                  FIELD_SIZE);
+            e.Graphics.DrawString("Score: " + score,
+                                  new Font(Font.FontFamily, FIELD_SIZE/2),
+                                  Brushes.White,
+                                  0,
+                                  0);
         }
 
         private void OpenMap(string map)
