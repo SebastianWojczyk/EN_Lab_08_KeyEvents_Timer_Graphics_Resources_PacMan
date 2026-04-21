@@ -100,7 +100,43 @@ namespace EN_Lab_08_KeyEvents_Timer_Graphics_PacMan
                     }
                 }
             }
-            e.Graphics.DrawImage(Properties.Resources.PacMan,
+
+            Bitmap tmpBitmap = new Bitmap(FIELD_SIZE, FIELD_SIZE);
+
+            //create graphics from tmpBitmap
+            Graphics g = Graphics.FromImage(tmpBitmap);
+            if (pacManDirection == Keys.Down)
+            {
+                //set the rotate point
+                g.TranslateTransform(FIELD_SIZE, 0);
+                //rotate "tmpBitmap"
+                g.RotateTransform(90);
+            }
+            else if (pacManDirection == Keys.Up)
+            {
+                //set the rotate point
+                g.TranslateTransform(0, FIELD_SIZE);
+                //rotate "tmpBitmap"
+                g.RotateTransform(270);
+            }
+            else if (pacManDirection == Keys.Left)
+            {
+                //set the flip point
+                g.TranslateTransform(FIELD_SIZE, 0);
+                //flip "tmpBitmap" by rescale
+                g.ScaleTransform(-1, 1);
+            }
+            else if (pacManDirection == Keys.Right)
+            {
+                //orginal position
+                //do nothing
+            }
+
+            //Draw rotated and translated PacMan image
+            g.DrawImage(Properties.Resources.PacMan, 0, 0);
+
+            //use rotated PanMan image drawing on tmpBitmap
+            e.Graphics.DrawImage(tmpBitmap,
                                  pacMan.X * FIELD_SIZE,
                                  pacMan.Y * FIELD_SIZE,
                                  FIELD_SIZE,
